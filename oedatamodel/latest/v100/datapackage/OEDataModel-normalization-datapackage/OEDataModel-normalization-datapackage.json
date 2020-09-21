@@ -85,24 +85,24 @@
     "schema": {
         "fields": [
             {"name": "data_id", "description": "Unique identifier", "type": "bigint", "unit": null},
-            {"name": "scenario_id", "description": "Scenario name", "type": "text", "unit": null},
+            {"name": "scenario_id", "description": "Scenario name", "type": "bigint", "unit": null},
             {"name": "region", "description": "Country or region", "type": "json", "unit": null},
             {"name": "input_energy_vector", "description": "", "type": "integer", "unit": null},
             {"name": "output_energy_vector", "description": "", "type": "text", "unit": null},
             {"name": "parameter_name", "description": "", "type": "text", "unit": null},
             {"name": "technology", "description": "", "type": "text", "unit": null},
             {"name": "technology_type", "description": "", "type": "text", "unit": null},
-            {"name": "type", "description": "vlaue: scalar or timeseries indicate the related table", "type": "text", "unit": null},
+            {"name": "type", "description": "value: scalar or timeseries indicate the related table", "type": "text", "unit": null},
             {"name": "unit", "description": "Parameter unit", "type": "text", "unit": null},
-            {"name": "tags", "description": "Free classification with key-value pairs", "type": "hstore", "unit": null},
+            {"name": "tags", "description": "Free classification with key-value pairs", "type": "json", "unit": null},
             {"name": "method", "description": "Method type (sum, mean, median)", "type": "json", "unit": null},
             {"name": "source", "description": "Source", "type": "text", "unit": null},
             {"name": "comment", "description": "Comment", "type": "text", "unit": null}],
-        "primaryKey": ["scalar_id"],
+        "primaryKey": ["data_id"],
         "foreignKeys": [{
-                "fields": ["data_id"],
+                "fields": ["scenario_id"],
                 "reference": {
-                    "resource": "oed_scenario",
+                    "resource": "model_draft.oed_scenario",
                     "fields": ["scenario_id"] } } ] },
     
     "dialect":
@@ -117,12 +117,12 @@
     "schema": {
         "fields": [
             {"name": "data_id", "description": "Unique identifier", "type": "bigint", "unit": null},
-            {"name": "value", "description": "Value", "type": "decimal", "unit": "kw"} ],
+            {"name": "value", "description": "Value", "type": "float", "unit": "kw"} ],
         "primaryKey": ["data_id"],
         "foreignKeys": [{
                 "fields": ["data_id"],
                 "reference": {
-                    "resource": "oed_data",
+                    "resource": "model_draft.oed_data",
                     "fields": ["data_id"] } } ] },
     "dialect":
         {"delimiter": ";",
@@ -138,13 +138,13 @@
                 {"name": "data_id", "description": "Unique identifier", "type": "bigint", "unit": null},
                 {"name": "timeindex start", "description": "Start timestemp", "type": "timestamp", "unit": null},
                 {"name": "timeindex stop", "description": "Stop timestemp", "type": "timestamp", "unit": null},
-                {"name": "timeindex resolution", "description": "Timesteps", "type": "intervall", "unit": null},
-                {"name": "series", "description": "Timesteps", "type": "array[decimal]", "unit": null} ],
+                {"name": "timeindex resolution", "description": "Timesteps", "type": "interval", "unit": null},
+                {"name": "series", "description": "Timesteps", "type": "float array", "unit": null} ],
             "primaryKey": ["data_id"],
             "foreignKeys": [{
                     "fields": ["data_id"],
                     "reference": {
-                        "resource": "oed_data",
+                        "resource": "model_draft.oed_data",
                         "fields": ["data_id"] } } ] },
         "dialect":
             {"delimiter": ";",
