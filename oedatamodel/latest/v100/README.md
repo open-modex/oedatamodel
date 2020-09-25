@@ -82,7 +82,7 @@ curl
                                 {"type": "column", "column": "id", "table": "sc"}
                             ],
                             "operator": "=",
-                            "type": "operator",
+                            "type": "operator"
                         }
                     },
                     "on": {
