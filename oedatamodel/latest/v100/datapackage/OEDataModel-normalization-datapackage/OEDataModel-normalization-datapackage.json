@@ -87,7 +87,7 @@
                 {"name": "id", "description": "Unique identifier", "type": "bigint", "unit": null},
                 {"name": "scenario_id", "description": "Scenario name", "type": "bigint", "unit": null},
                 {"name": "region", "description": "Country or region", "type": "text array", "unit": null},
-                {"name": "input_energy_vector", "description": "", "type": "integer", "unit": null},
+                {"name": "input_energy_vector", "description": "", "type": "text", "unit": null},
                 {"name": "output_energy_vector", "description": "", "type": "text", "unit": null},
                 {"name": "parameter_name", "description": "", "type": "text", "unit": null},
                 {"name": "technology", "description": "", "type": "text", "unit": null},
