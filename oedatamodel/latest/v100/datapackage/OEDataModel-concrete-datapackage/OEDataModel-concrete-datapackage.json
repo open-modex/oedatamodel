@@ -61,13 +61,13 @@
     "encoding" : "UTF-8",
     "schema": {
         "fields": [
-            {"name": "scenario_id", "description": "Unique identifier", "type": "bigint", "unit": null},
+            {"name": "id", "description": "Unique identifier", "type": "bigint", "unit": null},
             {"name": "scenario", "description": "Scenario name", "type": "text", "unit": null},
             {"name": "region", "description": "Country or region", "type": "text array", "unit": null},
             {"name": "year", "description": "Year", "type": "integer", "unit": null},
             {"name": "source", "description": "Source", "type": "text", "unit": null},
             {"name": "comment", "description": "Comment", "type": "text", "unit": null} ],
-        "primaryKey": ["scenario_id"],
+        "primaryKey": ["id"],
         "foreignKeys": [{
                 "fields": [null],
                 "reference": {
@@ -84,21 +84,21 @@
     "encoding" : "UTF-8",
     "schema": {
         "fields": [
-            {"name": "scalar_id", "description": "Unique identifier", "type": "bigint", "unit": null},
+            {"name": "id", "description": "Unique identifier", "type": "bigint", "unit": null},
             {"name": "scenario_id", "description": "Scenario name", "type": "bigint", "unit": null},
             {"name": "region", "description": "Country or region", "type": "text array", "unit": null},
-            {"name": "input_energy_vector", "description": "", "type": "integer", "unit": null},
+            {"name": "input_energy_vector", "description": "", "type": "text", "unit": null},
             {"name": "output_energy_vector", "description": "", "type": "text", "unit": null},
             {"name": "parameter_name", "description": "", "type": "text", "unit": null},
             {"name": "technology", "description": "", "type": "text", "unit": null},
             {"name": "technology_type", "description": "", "type": "text", "unit": null},
-            {"name": "value", "description": "Parameter value", "type": "decimal", "unit": "kW"},
+            {"name": "value", "description": "Parameter value", "type": "float", "unit": "kW"},
             {"name": "unit", "description": "Parameter unit", "type": "text", "unit": null},
             {"name": "tags", "description": "Free classification with key-value pairs", "type": "json", "unit": null},
             {"name": "method", "description": "Method type (sum, mean, median)", "type": "json", "unit": null},
             {"name": "source", "description": "Source", "type": "text", "unit": null},
             {"name": "comment", "description": "Comment", "type": "text", "unit": null} ],
-        "primaryKey": ["scalar_id"],
+        "primaryKey": ["id"],
         "foreignKeys": [{
                 "fields": ["scenario_id"],
                 "reference": {
@@ -114,10 +114,10 @@
             "encoding" : "UTF-8",
             "schema": {
                 "fields": [
-                    {"name": "scalar_id", "description": "Unique identifier", "type": "bigint", "unit": null},
+                    {"name": "id", "description": "Unique identifier", "type": "bigint", "unit": null},
                     {"name": "scenario_id", "description": "Scenario name", "type": "bigint", "unit": null},
                     {"name": "region", "description": "Country or region", "type": "text array", "unit": null},
-                    {"name": "input_energy_vector", "description": "", "type": "integer", "unit": null},
+                    {"name": "input_energy_vector", "description": "", "type": "text", "unit": null},
                     {"name": "output_energy_vector", "description": "", "type": "text", "unit": null},
                     {"name": "parameter_name", "description": "", "type": "text", "unit": null},
                     {"name": "technology", "description": "", "type": "text", "unit": null},
@@ -131,7 +131,7 @@
                     {"name": "method", "description": "Method type (sum, mean, median)", "type": "json", "unit": null},
                     {"name": "source", "description": "Source", "type": "text", "unit": null},
                     {"name": "comment", "description": "Comment", "type": "text", "unit": null} ],
-                "primaryKey": ["scalar_id"],
+                "primaryKey": ["id"],
                 "foreignKeys": [{
                         "fields": ["scenario_id"],
                         "reference": {
